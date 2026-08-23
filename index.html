@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gam3V4ult | Game Tracker & Backlog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-accent">Gam3</span>V4ult
+      </div>
+      <div class="nav-controls">
+        <button id="view-all-btn" class="nav-btn active">Discover</button>
+        <button id="view-backlog-btn" class="nav-btn">
+          Backlog (<span id="backlog-count">0</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls-bar" id="controls-section">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search games (e.g. Witcher, Halo, Elden Ring)..." 
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="filters-box">
+        <select id="genre-select">
+          <option value="">All Genres</option>
+          <option value="action">Action</option>
+          <option value="rpg">RPG</option>
+          <option value="shooter">Shooter</option>
+          <option value="adventure">Adventure</option>
+          <option value="strategy">Strategy</option>
+          <option value="indie">Indie</option>
+        </select>
+
+        <select id="platform-select">
+          <option value="">All Platforms</option>
+          <option value="4">PC</option>
+          <option value="187">PlayStation 5</option>
+          <option value="186">Xbox Series X</option>
+          <option value="7">Nintendo Switch</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="status-container" class="status-container hidden">
+      <div id="status-message" class="status-message"></div>
+    </section>
+
+    <section>
+      <h2 id="section-heading" class="section-title">Popular Games</h2>
+      <div id="games-grid" class="games-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal for game specs & details -->
+  <div id="game-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Gam3V4ult &bull; Powered by <a href="https://rawg.io/" target="_blank" rel="noopener">RAWG API</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
